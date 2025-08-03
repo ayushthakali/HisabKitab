@@ -1,14 +1,21 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import classNames from "classnames";
 
-export default function SideBarLink({link, isOpen}) {
+export default function SideBarLink({ link, isOpen }) {
   return (
-    <Link
+    <NavLink
       to={link.path}
-     
-      className= "flex items-center gap-3 p-2 text-sm hover:bg-indigo-700 transition-colors mb-2 rounded-md"
+      className={({ isActive }) =>
+        classNames(
+          "flex items-center gap-3 p-2 text-sm hover:bg-indigo-700 transition-colors mb-2 rounded-md",
+          {
+            "bg-indigo-400": isActive,
+          }
+        )
+      }
     >
       {link.icon}
       {isOpen ? link.name : null}
-    </Link>
+    </NavLink>
   );
 }
