@@ -1,7 +1,8 @@
-import { BsLayoutSidebar } from "react-icons/bs";
+import { MdKeyboardDoubleArrowLeft } from "react-icons/md";
+import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 import classNames from "classnames";
 
-function SideBarToggle({ onClick, className }) {
+function SideBarToggle({ onClick, className, change }) {
   return (
     <button
       className={classNames(
@@ -10,7 +11,11 @@ function SideBarToggle({ onClick, className }) {
       )}
       onClick={onClick}
     >
-      <BsLayoutSidebar className="h-5 w-5" />
+      {change ? (
+        <MdKeyboardDoubleArrowRight className="h-5 w-5" />
+      ) : (
+        <MdKeyboardDoubleArrowLeft className="h-5 w-5" />
+      )}
     </button>
   );
 }

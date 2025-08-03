@@ -1,8 +1,10 @@
 
 
 function Transaction() {
+
+
   return (
-    <div>Transaction</div>
+    <div></div>
   )
 }
 
