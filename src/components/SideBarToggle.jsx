@@ -2,19 +2,19 @@ import { MdKeyboardDoubleArrowLeft } from "react-icons/md";
 import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 import classNames from "classnames";
 
-function SideBarToggle({ onClick, className, change }) {
+function SideBarToggle({ onClick, className, expanded }) {
   return (
     <button
       className={classNames(
         className,
-        "p-2 rounded-md hover:bg-indigo-700 cursor-pointer transition-colors"
+        "p-2 rounded-md hover:bg-indigo-700 cursor-pointer transition-color "
       )}
       onClick={onClick}
     >
-      {change ? (
-        <MdKeyboardDoubleArrowRight className="h-5 w-5" />
-      ) : (
+      {expanded ? (
         <MdKeyboardDoubleArrowLeft className="h-5 w-5" />
+      ) : (
+        <MdKeyboardDoubleArrowRight className="h-5 w-5" />
       )}
     </button>
   );

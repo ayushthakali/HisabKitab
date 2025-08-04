@@ -15,7 +15,7 @@ export default function SideBarLink({ link, isOpen }) {
       }
     >
       {link.icon}
-      {isOpen ? link.name : null}
+      {isOpen && link.name}
     </NavLink>
   );
 }
