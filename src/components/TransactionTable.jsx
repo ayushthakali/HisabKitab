@@ -2,7 +2,6 @@ import { GrEdit } from "react-icons/gr";
 import { RiDeleteBinLine } from "react-icons/ri";
 
 function TransactionTable({ transactions, onRowClick, isSelected }) {
-
   const headerElement = ["Category", "Date", "Amount", "Actions"];
 
   const header = headerElement.map((title) => {
@@ -12,7 +11,6 @@ function TransactionTable({ transactions, onRowClick, isSelected }) {
       </th>
     );
   });
-
 
   const renderedTransactions = transactions.map((transaction) => {
     return (
@@ -33,7 +31,7 @@ function TransactionTable({ transactions, onRowClick, isSelected }) {
           {transaction.amount}
         </td>
         <td className="px-4 py-2 flex justify-center gap-1 mt-1 ">
-          <GrEdit  /> <RiDeleteBinLine />
+          <GrEdit /> <RiDeleteBinLine />
         </td>
       </tr>
     );

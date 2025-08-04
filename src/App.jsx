@@ -5,6 +5,7 @@ import Root from "./pages/Root";
 import Category from "./pages/sideBarPage/Category";
 import Transaction from "./pages/sideBarPage/Transaction";
 import Settings from "./pages/sideBarPage/Settings";
+import AddTransaction from "./pages/AddTransaction";
 
 function App() {
  const router = createBrowserRouter([
@@ -24,6 +25,9 @@ function App() {
         },{
           path:"settings",
           element: <Settings />
+        },{
+          path:"add-transaction",
+          element:<AddTransaction/>
         }
     ]
   },
