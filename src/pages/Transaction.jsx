@@ -1,13 +1,13 @@
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router";
-import TransactionContext from "../../context/contextTransaction";
-import TransactionTable from "../../components/TransactionTable";
-import Container from "../../components/Container";
-import Card from "../../components/Card";
-import Description from "../../components/Description";
+import useTransactionContext from "../hooks/use-context-transaction";
+import TransactionTable from "../components/TransactionComponents/TransactionTable";
+import Container from "../components/Container";
+import Card from "../components/Card";
+import Description from "../components/TransactionComponents/Description";
 
 function Transaction() {
-  const { fetchTransactions, transactions } = useContext(TransactionContext);
+  const { fetchTransactions, transactions } = useTransactionContext();
   const [isSelected, setIsSelected] = useState("");
   const [selectedTransaction, setselectedTransaction] = useState("");
 
@@ -30,7 +30,7 @@ function Transaction() {
             Transactions...
           </h1>
           <Link
-            to="/add-transaction"
+            to="/transaction/add"
             className="border px-4 py-2 rounded bg-indigo-500 text-white cursor-pointer shadow transition-colors hover:bg-indigo-700 mt-1"
           >
             +Add Transaction

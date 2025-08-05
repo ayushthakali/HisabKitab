@@ -1,8 +1,8 @@
 import { TbCurrencyRupeeNepalese } from "react-icons/tb";
 import { Link } from "react-router-dom";
 import { links } from "../data/SideBarLinks";
-import SideBarLink from "./SideBarLink";
-import SideBarToggle from "./SideBarToggle";
+import SideBarLink from "../components/SideBarComponents/SideBarLink";
+import SideBarToggle from "../components/SideBarComponents/SideBarToggle";
 
 function SideBar({ isOpen, onClick }) {
   const renderedLinks = links.map((link) => {

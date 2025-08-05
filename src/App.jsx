@@ -1,10 +1,10 @@
 import { createBrowserRouter } from "react-router-dom";
 import { RouterProvider } from "react-router-dom";
-import Dashboard from "./pages/sideBarPage/Dashboard";
+import Dashboard from "./pages/Dashboard";
 import Root from "./pages/Root";
-import Category from "./pages/sideBarPage/Category";
-import Transaction from "./pages/sideBarPage/Transaction";
-import Settings from "./pages/sideBarPage/Settings";
+import Category from "./pages/Category";
+import Transaction from "./pages/Transaction";
+import Settings from "./pages/Settings";
 import AddTransaction from "./pages/AddTransaction";
 
 function App() {
@@ -26,7 +26,7 @@ function App() {
           path:"settings",
           element: <Settings />
         },{
-          path:"add-transaction",
+          path:"transaction/add",
           element:<AddTransaction/>
         }
     ]

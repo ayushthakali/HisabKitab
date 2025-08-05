@@ -1,18 +1,42 @@
 {
     "transactions": [
         {
-            "id": "1",
+            "id": 1,
             "date": "2023-10-01",
             "amount": 30000,
             "category": "Salary",
             "description": "August Salary"
         },
-         {
-            "id": "2",
+        {
+            "id": 2,
             "date": "2023-10-02",
             "amount": 4000,
             "category": "Education",
             "description": "Course fee"
+        },
+        {
+            "id": 3,
+            "date": "2023-09-02",
+            "amount": 50000,
+            "category": "Entertainment",
+            "description": ""
+        }
+    ],
+    "categories": [
+        {
+            "id": 1,
+            "name": "Food",
+            "type": "Expense"
+        },
+        {
+            "id": 2,
+            "name": "Salary",
+            "type": "Income"
+        },
+        {
+            "id": 3,
+            "name": "Entertainment",
+            "type": "Expense"
         }
     ]
 }

@@ -15,7 +15,7 @@ function Description({ isSelected, selectedTransaction }) {
           {selectedTransaction?.description ? (
             selectedTransaction.description
           ) : (
-            <p>No Description</p>
+            <p>No Description Added!!!</p>
           )}
         </div>
       ) : (
