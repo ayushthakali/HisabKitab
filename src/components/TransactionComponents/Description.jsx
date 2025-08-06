@@ -3,7 +3,7 @@ import { MdOutlineDescription } from "react-icons/md";
 function Description({ isSelected, selectedTransaction }) {
   return (
     <div
-      className={`bg-white shadow-lg shadow-indigo-200 rounded-lg p-6 w-1/4 flex min-h-[30rem] h-fit min-w-97 ${
+      className={`bg-white shadow-lg shadow-indigo-200 rounded-lg p-6 w-1/4 flex min-h-[30rem] h-fit min-w-97 transition-all ${
         isSelected ? "" : "items-center justify-center"
       }`}
     >

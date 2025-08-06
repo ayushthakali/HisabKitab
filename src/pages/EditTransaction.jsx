@@ -1,17 +1,21 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useParams, useNavigate } from "react-router-dom";
+import useTransactionContext from "../hooks/use-context-transaction";
 import AddEditSkeleton from "../components/TransactionComponents/AddEditSkeleton";
 import AddEditForm from "../components/TransactionComponents/AddEditForm";
-import useTransactionContext from "../hooks/use-context-transaction";
 import TransactionFields from "../data/TransactionFields";
 
+function EditTransaction() {
+  const { date, amount, category, description } = useLocation().state;
+  const { id } = useParams();
+  const navigate = useNavigate();
 
-function AddTransaction() {
   const [formData, setFormData] = useState({
-    date: "",
-    amount: "",
-    category: "",
-    description: "",
+    date,
+    amount,
+    category,
+    description,
+    id,
   });
 
   const handleChange = (e) => {
@@ -22,18 +26,16 @@ function AddTransaction() {
     }));
   };
 
-  const { addTransaction } = useTransactionContext();
-
-  const navigate = useNavigate();
+  const { editTransaction } = useTransactionContext();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    addTransaction(formData);
+    editTransaction(formData);
     navigate("/transaction");
   };
 
   return (
-    <AddEditSkeleton title={"Create a new transaction..."}>
+    <AddEditSkeleton title={"Edit the transaction..."}>
       <AddEditForm handleSubmit={handleSubmit}>
         <TransactionFields handleChange={handleChange} formData={formData} />
       </AddEditForm>
@@ -41,4 +43,4 @@ function AddTransaction() {
   );
 }
 
-export default AddTransaction;
+export default EditTransaction;

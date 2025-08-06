@@ -1,5 +1,5 @@
-import { GrEdit } from "react-icons/gr";
-import { RiDeleteBinLine } from "react-icons/ri";
+import HandleDelete from "./HandleDelete";
+import HandleEdit from "./HandleEdit";
 
 function TransactionTable({ transactions, onRowClick, isSelected }) {
   const headerElement = ["Category", "Date", "Amount", "Actions"];
@@ -11,8 +11,8 @@ function TransactionTable({ transactions, onRowClick, isSelected }) {
       </th>
     );
   });
-
-  const renderedTransactions = transactions.map((transaction) => {
+  
+  const renderedTransactions = transactions.slice().reverse().map((transaction) => {
     return (
       <tr
         key={transaction.id}
@@ -30,8 +30,8 @@ function TransactionTable({ transactions, onRowClick, isSelected }) {
         <td className="px-4 py-2 border-r border-indigo-300">
           {transaction.amount}
         </td>
-        <td className="px-4 py-2 flex justify-center gap-1 mt-1 ">
-          <GrEdit /> <RiDeleteBinLine />
+        <td className="px-4 py-2 flex justify-center items-center gap-1 mt-1 ">
+          <HandleEdit transaction={transaction}/> <HandleDelete transactionId={transaction.id}/>
         </td>
       </tr>
     );

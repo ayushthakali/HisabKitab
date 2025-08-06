@@ -3,36 +3,55 @@ import { RouterProvider } from "react-router-dom";
 import Dashboard from "./pages/Dashboard";
 import Root from "./pages/Root";
 import Category from "./pages/Category";
-import Transaction from "./pages/Transaction";
+import TransactionPage from "./pages/TransactionPage";
 import Settings from "./pages/Settings";
 import AddTransaction from "./pages/AddTransaction";
+import EditTransaction from "./pages/EditTransaction";
+import AddCategory from "./pages/AddCategory";
+import EditCategory from "./pages/EditCategory";
 
 function App() {
- const router = createBrowserRouter([
-  {
-    path:"/",
-    element:<Root />,
-    children:[
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <Root />,
+      children: [
         {
           index: true,
-          element: <Dashboard />
-        },{
-          path:"category",
-          element: <Category />
-        },{
-          path:"transaction",
-          element: <Transaction />
-        },{
-          path:"settings",
-          element: <Settings />
-        },{
-          path:"transaction/add",
-          element:<AddTransaction/>
-        }
-    ]
-  },
- ])
+          element: <Dashboard />,
+        },
+        {
+          path: "category",
+          element: <Category />,
+        },
+        {
+          path: "transaction",
+          element: <TransactionPage />,
+        },
+        {
+          path: "settings",
+          element: <Settings />,
+        },
+        {
+          path: "transaction/add",
+          element: <AddTransaction />,
+        },
+        {
+          path: "transaction/:id",
+          element: <EditTransaction />,
+        },
+        {
+          path: "category/add",
+          element: <AddCategory/>,
+        },
+        {
+          path: "category/:id",
+          element: <EditCategory />,
+        },
+      ],
+    },
+  ]);
   return <RouterProvider router={router} />;
 }
 
-export default App
+export default App;

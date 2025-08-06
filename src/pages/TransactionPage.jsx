@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 import useTransactionContext from "../hooks/use-context-transaction";
 import TransactionTable from "../components/TransactionComponents/TransactionTable";
 import Container from "../components/Container";
@@ -24,7 +24,7 @@ function Transaction() {
 
   return (
     <Container>
-      <Card>
+      <Card className="max-w-2xl">
         <div className="flex justify-between w-full p-3 border-b border-gray-300">
           <h1 className="text-3xl font-bold text-indigo-800">
             Transactions...

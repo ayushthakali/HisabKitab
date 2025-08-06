@@ -1,42 +1,45 @@
 {
-    "transactions": [
-        {
-            "id": 1,
-            "date": "2023-10-01",
-            "amount": 30000,
-            "category": "Salary",
-            "description": "August Salary"
-        },
-        {
-            "id": 2,
-            "date": "2023-10-02",
-            "amount": 4000,
-            "category": "Education",
-            "description": "Course fee"
-        },
-        {
-            "id": 3,
-            "date": "2023-09-02",
-            "amount": 50000,
-            "category": "Entertainment",
-            "description": ""
-        }
-    ],
-    "categories": [
-        {
-            "id": 1,
-            "name": "Food",
-            "type": "Expense"
-        },
-        {
-            "id": 2,
-            "name": "Salary",
-            "type": "Income"
-        },
-        {
-            "id": 3,
-            "name": "Entertainment",
-            "type": "Expense"
-        }
-    ]
+  "transactions": [
+    {
+      "date": "2025-08-06",
+      "amount": 500000,
+      "category": "Salary",
+      "description": "august salary",
+      "id": "1d13"
+    },
+    {
+      "date": "2025-08-06",
+      "amount": 400,
+      "category": "Entertainment",
+      "description": "watched movie",
+      "id": "f083"
+    }
+  ],
+  "categories": [
+    {
+      "id": "7ec2",
+      "name": "HealthCare",
+      "type": "Expense"
+    },
+    {
+      "id": "9537",
+      "name": "Entertainment",
+      "type": "Expense"
+    },
+    {
+      "name": "Salary",
+      "type": "Income",
+      "id": "3056"
+    },
+    {
+      "id": "8d21",
+      "name": "Travel",
+      "type": "Expense"
+    },
+    {
+      "id": "e415",
+      "name": "Open Balance",
+      "type": "Income"
+    }
+  ]
 }

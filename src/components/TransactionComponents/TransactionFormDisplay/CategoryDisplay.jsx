@@ -1,7 +1,7 @@
 import { useEffect } from "react";
-import useTransactionContext from "../../hooks/use-context-transaction";
+import useTransactionContext from "../../../hooks/use-context-transaction";
 
-function CategoryDisplay({ inputClass }) {
+function CategoryDisplay({ inputClass, handleChange, formData}) {
   const { categories, fetchCategories } = useTransactionContext();
 
   useEffect(() => {
@@ -21,9 +21,9 @@ function CategoryDisplay({ inputClass }) {
       htmlFor="Category"
       className="block mb-4 w-full text-gray-700 font-medium"
     >
-      Category
-      <select id="Category" name="Category" className={inputClass} required>
-        <option value="" className="text-gray-400 ">
+      CATTEGORY
+      <select id="Category" name="category" className={inputClass} onChange={handleChange} value={formData.category} required>
+        <option value="" className="text-gray-400">
           Select a category
         </option>
         {renderedOptions}
