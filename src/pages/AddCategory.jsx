@@ -41,7 +41,7 @@ function AddCategory() {
   };
 
   return (
-    <AddEditSkeleton title={"Create a new category..."} className="pt-48">
+    <AddEditSkeleton title={"Create a new category..."} className="pt-40">
       <AddEditForm handleSubmit={handleSubmit}>
         <label
           htmlFor="categoryName"

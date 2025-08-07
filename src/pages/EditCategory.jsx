@@ -30,7 +30,6 @@ function EditTransaction() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
     const isDuplicate = categories.some(
       (category) =>
         category.name.toLowerCase() === formData.categoryName.toLowerCase() &&

@@ -41,6 +41,7 @@ function Transaction() {
             transactions={transactions}
             onRowClick={handleClick}
             isSelected={isSelected}
+            showActions={true}
           />
         </div>
       </Card>

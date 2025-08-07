@@ -21,11 +21,16 @@ export function TransactionContextProvider({ children }) {
   }, []);
 
   const addTransaction = async ({ date, amount, category, description }) => {
+    if (!categories || categories.length === 0) {
+      await fetchCategories();
+    }
+    const catId = categories.find((cat) => cat.name === category).id;
     const res = await axios.post(`${baseUrl}transactions`, {
       date,
       amount: Number(amount),
       category,
       description,
+      catId,
     });
     setTransactions((prev) => [...prev, res.data]);
   };
@@ -46,6 +51,15 @@ export function TransactionContextProvider({ children }) {
     setTransactions(updatedTransactions);
   };
 
+  const removeAllTransactions = async () => {
+    const res = await axios.get(`${baseUrl}transactions`);
+    const deleteRequests = res.data.map((transaction) =>
+      axios.delete(`${baseUrl}transactions/${transaction.id}`)
+    );
+    await Promise.all(deleteRequests);
+    setTransactions([]);
+  };
+
   const removeCategory = async (id) => {
     await axios.delete(`${baseUrl}categories/${id}`);
     const updatedCategories = categories.filter(
@@ -61,11 +75,16 @@ export function TransactionContextProvider({ children }) {
     description,
     id,
   }) => {
+    if (!categories || categories.length === 0) {
+      await fetchCategories();
+    }
+    const catId = categories.find((cat) => cat.name === category).id;
     const res = await axios.put(`${baseUrl}transactions/${id}`, {
       date,
       amount: Number(amount),
       category,
       description,
+      catId,
     });
     const updatedTransactions = transactions.map((transaction) => {
       if (transaction.id === id) {
@@ -101,6 +120,7 @@ export function TransactionContextProvider({ children }) {
     addCategory,
     removeCategory,
     editCategory,
+    removeAllTransactions,
   };
 
   return (

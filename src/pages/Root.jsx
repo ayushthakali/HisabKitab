@@ -9,7 +9,7 @@ function Root() {
   return (
     <div>
       <SideBar isOpen={isOpen} onClick={() => setIsOpen((prev) => !prev)} />
-      <div className={isOpen ? "ml-56" : "ml-16"}>
+      <div className={isOpen ? "ml-60" : "ml-16"}>
         <TransactionContextProvider>
           <Outlet />
         </TransactionContextProvider>

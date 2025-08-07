@@ -1,27 +1,5 @@
 {
-  "transactions": [
-    {
-      "date": "2025-08-06",
-      "amount": 500000,
-      "category": "Salary",
-      "description": "august salary",
-      "id": "1d13"
-    },
-    {
-      "date": "2025-08-06",
-      "amount": 20000,
-      "category": "Open Balance",
-      "description": "starting price\n",
-      "id": "f083"
-    },
-    {
-      "id": "56ce",
-      "date": "2025-08-07",
-      "amount": 100,
-      "category": "Snacks and Drinks",
-      "description": "Bought 2 banana bread"
-    }
-  ],
+  "transactions": [],
   "categories": [
     {
       "id": "7ec2",
@@ -51,6 +29,11 @@
     {
       "id": "d676",
       "name": "Snacks and Drinks",
+      "type": "Expense"
+    },
+    {
+      "id": "7244",
+      "name": "Groceries",
       "type": "Expense"
     }
   ]

@@ -12,7 +12,7 @@ function SideBar({ isOpen, onClick }) {
   return (
     <>
       {isOpen ? (
-        <div className="container w-56 bg-[#181b22] border-r border-gray-600 text-white h-screen shadow p-4 transition-all fixed top-0 left-0 ">
+        <div className="container w-60 bg-[#181b22] border-r border-gray-600 text-white h-screen shadow p-4 transition-all fixed top-0 left-0 ">
           <div className="flex gap-4 items-center ">
             <div className="flex items-center justify-center py-4 gap-1">
               <TbCurrencyRupeeNepalese

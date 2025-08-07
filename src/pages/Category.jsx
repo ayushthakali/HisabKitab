@@ -13,7 +13,7 @@ function Category() {
   return (
     <AddEditSkeleton
       title="Categories..."
-      className="pt-48"
+      className="pt-40"
       link="+Add Category"
     >
       <div className="mt-4 p-3 w-full overflow-x-auto">
