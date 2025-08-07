@@ -6,40 +6,37 @@ function TransactionTable({ transactions, onRowClick, isSelected }) {
 
   const header = headerElement.map((title) => {
     return (
-      <th className="px-4 py-2 border-r border-indigo-300" key={title}>
+      <th className="px-4 py-2" key={title}>
         {title}
       </th>
     );
   });
-  
-  const renderedTransactions = transactions.slice().reverse().map((transaction) => {
-    return (
-      <tr
-        key={transaction.id}
-        onClick={() => onRowClick(transaction.id)}
-        className={`cursor-pointer ${
-          isSelected === transaction.id ? "bg-gray-200" : ""
-        }`}
-      >
-        <td className="px-4 py-2 border-r border-indigo-300">
-          {transaction.category}
-        </td>
-        <td className="px-4 py-2 border-r border-indigo-300">
-          {transaction.date}
-        </td>
-        <td className="px-4 py-2 border-r border-indigo-300">
-          {transaction.amount}
-        </td>
-        <td className="px-4 py-2 flex justify-center items-center gap-1 mt-1 ">
-          <HandleEdit transaction={transaction}/> <HandleDelete transactionId={transaction.id}/>
-        </td>
-      </tr>
-    );
-  });
+
+  const renderedTransactions = transactions
+    .slice()
+    .reverse()
+    .map((transaction) => {
+      return (
+        <tr
+          key={transaction.id}
+          onClick={() => onRowClick?.(transaction.id)}
+          className={`cursor-pointer bg-[#1f232c] text-gray-300
+            ${isSelected === transaction.id ? "bg-indigo-400 text-white" : ""}`}
+        > 
+          <td className="px-4 py-2 ">{transaction.category}</td>
+          <td className="px-4 py-2 ">{transaction.date}</td>
+          <td className="px-4 py-2 ">{transaction.amount}</td>
+          <td className="px-4 py-2 flex justify-center items-center gap-1 mt-1 ">
+            <HandleEdit transaction={transaction} />{" "}
+            <HandleDelete transactionId={transaction.id} />
+          </td>
+        </tr>
+      );
+    });
 
   return (
-    <table className="table-auto border border-indigo-300 border-collapse w-full text-center">
-      <thead className="border-b border-indigo-300 bg-indigo-200">
+    <table className="table-auto border-collapse w-full text-center">
+      <thead className=" bg-[#2a2d3a]">
         <tr>{header}</tr>
       </thead>
       <tbody>{renderedTransactions}</tbody>

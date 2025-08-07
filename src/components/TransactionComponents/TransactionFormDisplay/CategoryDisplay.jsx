@@ -19,9 +19,9 @@ function CategoryDisplay({ inputClass, handleChange, formData}) {
   return (
     <label
       htmlFor="Category"
-      className="block mb-4 w-full text-gray-700 font-medium"
+      className="block mb-4 w-full text-gray-400 font-medium"
     >
-      CATTEGORY
+      CATEGORY
       <select id="Category" name="category" className={inputClass} onChange={handleChange} value={formData.category} required>
         <option value="" className="text-gray-400">
           Select a category

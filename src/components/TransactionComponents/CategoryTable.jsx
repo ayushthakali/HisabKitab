@@ -5,8 +5,15 @@ function CategoryTable({ categories }) {
   const headerElement = ["Category", "Type", "Actions"];
 
   const header = headerElement.map((title) => {
+    if (title !== "Actions") {
+      return (
+        <th className="px-4 py-2" key={title}>
+          {title}
+        </th>
+      );
+    }
     return (
-      <th className="px-4 py-2 border-r border-indigo-300" key={title}>
+      <th className="px-4 py-2 text-center" key={title}>
         {title}
       </th>
     );
@@ -14,14 +21,18 @@ function CategoryTable({ categories }) {
 
   const renderedCategories = categories.map((category) => {
     return (
-      <tr key={category.id} >
-        <td className="px-4 py-2 border-r border-indigo-300">
-          {category.name}
+      <tr key={category.id} className="bg-[#1f232c] text-gray-300">
+        <td className="px-4 py-2">{category.name}</td>
+        <td className="px-4 py-2 ">
+          <h1
+            className={`inline-block w-1/2 text-white text-center rounded-md ${
+              category.type === "Expense" ? "bg-red-500" : "bg-green-500"
+            }`}
+          >
+            {category.type}
+          </h1>
         </td>
-        <td className="px-4 py-2 border-r border-indigo-300 ">
-         <h1 className={`inline-block w-1/2 text-white rounded-md ${category.type==="Expense"?"bg-red-500":"bg-green-500"}`}>{category.type}</h1>
-        </td>
-        <td className="px-4 py-2 flex justify-center items-center gap-1 mt-1 ">
+        <td className="px-4 py-2 flex justify-center items-start gap-1 mt-1 ">
           <HandleEdit category={category} />
           <HandleDelete categoryId={category.id} />
         </td>
@@ -30,8 +41,8 @@ function CategoryTable({ categories }) {
   });
 
   return (
-    <table className="table-auto border border-indigo-300 border-collapse w-full text-center -mt-2">
-      <thead className="border-b border-indigo-300 bg-indigo-200">
+    <table className="table-auto w-full text-left -mt-2">
+      <thead className=" bg-[#2a2d3a] ">
         <tr>{header}</tr>
       </thead>
       <tbody>{renderedCategories}</tbody>

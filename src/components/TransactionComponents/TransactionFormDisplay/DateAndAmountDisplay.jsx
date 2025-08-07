@@ -9,7 +9,7 @@ function DateAndAmountDisplay({ inputClass, handleChange, formData }) {
       <label
         key={el.name}
         htmlFor={el.name}
-        className="block mb-4 w-full text-gray-700 font-medium"
+        className="block mb-4 w-full text-gray-400 font-medium"
       >
         {el.name.toUpperCase()}
         <input

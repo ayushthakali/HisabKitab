@@ -45,7 +45,7 @@ function EditTransaction() {
   };
 
   return (
-    <AddEditSkeleton title={"Edit the category..."}>
+    <AddEditSkeleton title={"Edit the category..." } className="pt-50">
       <AddEditForm handleSubmit={handleSubmit}>
         <label
           htmlFor="categoryName"

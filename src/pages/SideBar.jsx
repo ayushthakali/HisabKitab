@@ -12,7 +12,7 @@ function SideBar({ isOpen, onClick }) {
   return (
     <>
       {isOpen ? (
-        <div className="container w-56 bg-gradient-to-b from-indigo-800 to-blue-800 text-white h-screen shadow p-4 transition-all fixed top-0 left-0 ">
+        <div className="container w-56 bg-[#181b22] border-r border-gray-600 text-white h-screen shadow p-4 transition-all fixed top-0 left-0 ">
           <div className="flex gap-4 items-center ">
             <div className="flex items-center justify-center py-4 gap-1">
               <TbCurrencyRupeeNepalese
@@ -25,14 +25,14 @@ function SideBar({ isOpen, onClick }) {
             </div>
             <SideBarToggle onClick={onClick} expanded={true} />
           </div>
-          <div className="flex flex-col mt-3 pt-5 border-t border-indigo-700">
+          <div className="flex flex-col mt-3 pt-5 border-t  border-gray-600 ">
             {renderedLinks}
           </div>
         </div>
       ) : (
-        <div className="flex flex-col items-center w-16 bg-gradient-to-b from-indigo-800 to-blue-800 text-white h-screen shadow p-2 transition-all fixed top-0 left-0">
+        <div className="flex flex-col items-center w-16 bg-[#181b22] border-r border-gray-600 text-white h-screen shadow p-2 transition-all fixed top-0 left-0">
           <SideBarToggle onClick={onClick} className="mt-4" />
-          <div className="flex flex-col items-center mt-5 gap-2 pt-4 border-t border-indigo-700">
+          <div className="flex flex-col items-center mt-5 gap-2 pt-4 border-t  border-gray-600 ">
             {renderedLinks}
           </div>
         </div>

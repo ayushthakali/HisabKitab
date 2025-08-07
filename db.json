@@ -9,10 +9,17 @@
     },
     {
       "date": "2025-08-06",
-      "amount": 400,
-      "category": "Entertainment",
-      "description": "watched movie",
+      "amount": 20000,
+      "category": "Open Balance",
+      "description": "starting price\n",
       "id": "f083"
+    },
+    {
+      "id": "56ce",
+      "date": "2025-08-07",
+      "amount": 100,
+      "category": "Snacks and Drinks",
+      "description": "Bought 2 banana bread"
     }
   ],
   "categories": [
@@ -40,6 +47,11 @@
       "id": "e415",
       "name": "Open Balance",
       "type": "Income"
+    },
+    {
+      "id": "d676",
+      "name": "Snacks and Drinks",
+      "type": "Expense"
     }
   ]
 }

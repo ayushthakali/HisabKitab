@@ -5,7 +5,6 @@ import AddEditForm from "../components/TransactionComponents/AddEditForm";
 import useTransactionContext from "../hooks/use-context-transaction";
 import TransactionFields from "../data/TransactionFields";
 
-
 function AddTransaction() {
   const [formData, setFormData] = useState({
     date: "",

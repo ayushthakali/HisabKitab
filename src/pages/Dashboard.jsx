@@ -1,13 +1,30 @@
+import { useEffect } from "react";
+import Container from "../components/Container";
+import DashboardHeader from "../components/DashboardHeader";
+import AddEditSkeleton from "../components/TransactionComponents/AddEditSkeleton";
+import useTransactionContext from "../hooks/use-context-transaction";
+import TransactionTable from "../components/TransactionComponents/TransactionTable";
 
 function Dashboard() {
+  const { fetchTransactions, transactions } = useTransactionContext();
+
+  useEffect(() => {
+    fetchTransactions();
+  }, [fetchTransactions]);
+
   return (
-    <div className="text-3xl">Lorem ipsum Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit obcaecati ipsum vero ullam quam eius eligendi tenetur esse ea enim, expedita eos labore nam. Quas facilis libero odio sint hic. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, iusto ducimus fugiat, quae vero, placeat vitae quia cupiditate cum molestias ex dolores explicabo voluptatibus! Laboriosam deserunt ipsam eaque pariatur velit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio dolores vitae molestias ratione, rerum dolorum qui alias in fugiat sapiente quo harum libero corrupti, reprehenderit enim illo, quae dicta numquam!Lorem
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quis voluptate, officiis saepe rerum tempora iste asperiores voluptatibus modi quidem deserunt delectus, consectetur aut recusandae ex harum at praesentium culpa?
-    
-    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Exercitationem, animi dolore dicta possimus molestias similique tempore accusamus ea, atque eligendi aspernatur doloribus! Nemo veniam officiis voluptatum excepturi, vitae magnam saepe!Lorem
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam ullam sit, molestiae expedita corrupti, eius iste deserunt soluta at, dignissimos esse provident eligendi ut ab iure commodi recusandae exercitationem debitis?
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque facilis vitae fugit repellat ut sed dolore libero veniam, nostrum obcaecati officia provident placeat totam tenetur, qui fuga maiores eveniet ratione? dolor sit amet consectetur adipisicing elit. Voluptatum excepturi temporibus, eaque cupiditate ut enim! Optio perspiciatis, facere temporibus impedit quidem, facilis doloremque dignissimos earum officiis fugit esse atque ut.lore Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore quo suscipit dignissimos, consequuntur libero rem ipsa impedit, pariatur cum fugiat saepe dolore fugit accusantium repellat. Optio accusamus eaque atque tempora!LoremDashboarddfsafsfsfdsfadsfadfsfdsfdsf Lorem ipsum dolor sit amet consectetur, adipisicing elit. Soluta beatae dignissimos eligendi at pariatur quaerat, quo aspernatur ullam harum consequuntur reiciendis veniam voluptatem maxime. Perferendis similique repellendus eveniet nemo fuga.</div>
-  )
+    <Container className="!flex-col !px-22 gap-12">
+      <div className="flex justify-around w-full">
+        <DashboardHeader />
+      </div>
+
+      <AddEditSkeleton title="Recent Transactions.." className="!bg-[#1f232c] rounded-lg ml-6">
+        <div className="mt-4 p-3 w-full overflow-x-auto">
+          <TransactionTable transactions={transactions.slice(-5)} />
+        </div>
+      </AddEditSkeleton>
+    </Container>
+  );
 }
 
-export default Dashboard
+export default Dashboard;

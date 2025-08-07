@@ -1,7 +1,7 @@
 
 function AddEditForm({ handleSubmit, children }) {
   return (
-    <form className="w-full h-full px-2 py-2" onSubmit={handleSubmit}>
+    <form className="w-full h-full p-6 rounded-lg bg-[#252834]" onSubmit={handleSubmit}>
       {children}
       <button
         type="submit"
