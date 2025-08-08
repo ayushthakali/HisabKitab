@@ -4,7 +4,6 @@ import Dashboard from "./pages/Dashboard";
 import Root from "./pages/Root";
 import Category from "./pages/Category";
 import TransactionPage from "./pages/TransactionPage";
-import Settings from "./pages/Settings";
 import AddTransaction from "./pages/AddTransaction";
 import EditTransaction from "./pages/EditTransaction";
 import AddCategory from "./pages/AddCategory";
@@ -27,10 +26,6 @@ function App() {
         {
           path: "transaction",
           element: <TransactionPage />,
-        },
-        {
-          path: "settings",
-          element: <Settings />,
         },
         {
           path: "transaction/add",

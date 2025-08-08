@@ -51,15 +51,6 @@ export function TransactionContextProvider({ children }) {
     setTransactions(updatedTransactions);
   };
 
-  const removeAllTransactions = async () => {
-    const res = await axios.get(`${baseUrl}transactions`);
-    const deleteRequests = res.data.map((transaction) =>
-      axios.delete(`${baseUrl}transactions/${transaction.id}`)
-    );
-    await Promise.all(deleteRequests);
-    setTransactions([]);
-  };
-
   const removeCategory = async (id) => {
     await axios.delete(`${baseUrl}categories/${id}`);
     const updatedCategories = categories.filter(
@@ -120,7 +111,6 @@ export function TransactionContextProvider({ children }) {
     addCategory,
     removeCategory,
     editCategory,
-    removeAllTransactions,
   };
 
   return (

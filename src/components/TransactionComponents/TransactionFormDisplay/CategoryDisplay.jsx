@@ -22,7 +22,7 @@ function CategoryDisplay({ inputClass, handleChange, formData}) {
       className="block mb-4 w-full text-gray-400 font-medium"
     >
       CATEGORY
-      <select id="Category" name="category" className={inputClass} onChange={handleChange} value={formData.category} required>
+      <select id="Category" name="category" className={`${inputClass} overflow-y-auto`} onChange={handleChange} value={formData.category} required>
         <option value="" className="text-gray-400">
           Select a category
         </option>

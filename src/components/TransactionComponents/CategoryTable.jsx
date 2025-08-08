@@ -1,8 +1,25 @@
 import HandleDelete from "./HandleDelete";
 import HandleEdit from "./HandleEdit";
+import PaginationControls from "../PaginationControls";
+import { useState } from "react";
 
 function CategoryTable({ categories }) {
   const headerElement = ["Category", "Type", "Actions"];
+
+  const [currentPage, setCurrentPage] = useState(1);
+  const totalRows = 7;
+  const totalPages = Math.ceil(categories.length / totalRows);
+
+  const startIndex = (currentPage - 1) * totalRows;
+  const endIndex = startIndex + totalRows;
+
+  const handlePrev = () => {
+    setCurrentPage(currentPage - 1);
+  };
+
+  const handleNext = () => {
+    setCurrentPage(currentPage + 1);
+  };
 
   const header = headerElement.map((title) => {
     if (title !== "Actions") {
@@ -19,7 +36,7 @@ function CategoryTable({ categories }) {
     );
   });
 
-  const renderedCategories = categories.map((category) => {
+  const renderedCategories = categories.slice(startIndex,endIndex).map((category) => {
     return (
       <tr key={category.id} className="bg-[#1f232c] text-gray-300">
         <td className="px-4 py-2">{category.name}</td>
@@ -40,13 +57,15 @@ function CategoryTable({ categories }) {
     );
   });
 
-  return (
+  return (<>
     <table className="table-auto w-full text-left -mt-2">
       <thead className=" bg-[#2a2d3a] ">
         <tr>{header}</tr>
       </thead>
       <tbody>{renderedCategories}</tbody>
     </table>
+    <PaginationControls handleNext={handleNext} handlePrev={handlePrev} currentPage={currentPage} totalPages={totalPages}/>
+    </>
   );
 }
 

@@ -26,9 +26,7 @@ function Transaction() {
     <Container className="pt-28">
       <Card className="max-w-2xl -mt-7">
         <div className="flex justify-between w-full p-3 border-b border-gray-300">
-          <h1 className="text-3xl font-bold text-white">
-            Transactions...
-          </h1>
+          <h1 className="text-3xl font-bold text-white">Transactions...</h1>
           <Link
             to="/transaction/add"
             className=" px-4 py-2 rounded-md bg-indigo-500 text-white cursor-pointer shadow transition-colors hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-400 mt-1"
@@ -41,11 +39,14 @@ function Transaction() {
             transactions={transactions}
             onRowClick={handleClick}
             isSelected={isSelected}
-            showActions={true}
           />
+         
         </div>
       </Card>
-      <Description isSelected={isSelected} selectedTransaction={selectedTransaction}/>
+      <Description
+        isSelected={isSelected}
+        selectedTransaction={selectedTransaction}
+      />
     </Container>
   );
 }

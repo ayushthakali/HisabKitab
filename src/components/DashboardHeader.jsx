@@ -32,7 +32,7 @@ function DashboardHeader({ transactions }) {
         </div>
         <div className="flex flex-col items-start justify-center p-3 w-full  ">
           <p className=" text-gray-300 text-med">{header.name}</p>
-          <h1 className="font-semibold text-3xl">Rs. {header.amount}</h1>
+          <h1 className="font-semibold text-3xl">Rs. {header.amount.toLocaleString('en-IN')}</h1>
         </div>
       </Card>
     );
@@ -40,5 +40,6 @@ function DashboardHeader({ transactions }) {
 
   return <>{renderedHeaders}</>;
 }
+
 
 export default DashboardHeader;

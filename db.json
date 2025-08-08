@@ -1,5 +1,102 @@
 {
-  "transactions": [],
+  "transactions": [
+    {
+      "id": "3731",
+      "date": "2025-08-07",
+      "amount": 5000,
+      "category": "Open Balance",
+      "description": "Open balance\n",
+      "catId": "e415"
+    },
+    {
+      "id": "65ca",
+      "date": "2025-08-07",
+      "amount": 100,
+      "category": "Snacks and Drinks",
+      "description": "Banana Cakes\n",
+      "catId": "d676"
+    },
+    {
+      "id": "a3f6",
+      "date": "2025-08-07",
+      "amount": 20,
+      "category": "HealthCare",
+      "description": "Paracetamol",
+      "catId": "7ec2"
+    },
+    {
+      "id": "e704",
+      "date": "2025-08-07",
+      "amount": 500,
+      "category": "Entertainment",
+      "description": "Watched movie",
+      "catId": "9537"
+    },
+    {
+      "id": "3c6d",
+      "date": "2025-08-07",
+      "amount": 1000,
+      "category": "Travel",
+      "description": "Petrol for bike",
+      "catId": "8d21"
+    },
+    {
+      "id": "8548",
+      "date": "2025-08-07",
+      "amount": 599,
+      "category": "Groceries",
+      "description": "3 kilo qwaty",
+      "catId": "7244"
+    },
+    {
+      "id": "8480",
+      "date": "2025-08-07",
+      "amount": 50000,
+      "category": "Salary",
+      "description": "August salary",
+      "catId": "3056"
+    },
+    {
+      "id": "45ad",
+      "date": "2025-08-07",
+      "amount": 200,
+      "category": "Restaurants/Cafe",
+      "description": "Jhol Momo",
+      "catId": "b347"
+    },
+    {
+      "id": "54c5",
+      "date": "2025-08-07",
+      "amount": 150,
+      "category": "Salons/Haircuts",
+      "description": "haircut",
+      "catId": "0827"
+    },
+    {
+      "id": "51b3",
+      "date": "2025-08-08",
+      "amount": 140,
+      "category": "Groceries",
+      "description": "1 ltr milk",
+      "catId": "7244"
+    },
+    {
+      "id": "4a16",
+      "date": "2025-08-08",
+      "amount": 20,
+      "category": "Snacks and Drinks",
+      "description": "Oreo biscuit",
+      "catId": "d676"
+    },
+    {
+      "id": "d1cc",
+      "date": "2025-08-08",
+      "amount": 500,
+      "category": "Bills and Payments",
+      "description": "Debit card renewal",
+      "catId": "1fe1"
+    }
+  ],
   "categories": [
     {
       "id": "7ec2",
@@ -34,6 +131,26 @@
     {
       "id": "7244",
       "name": "Groceries",
+      "type": "Expense"
+    },
+    {
+      "id": "b347",
+      "name": "Restaurants/Cafe",
+      "type": "Expense"
+    },
+    {
+      "id": "1431",
+      "name": "Incentive",
+      "type": "Income"
+    },
+    {
+      "id": "1fe1",
+      "name": "Bills and Payments",
+      "type": "Expense"
+    },
+    {
+      "id": "0827",
+      "name": "Salons/Haircuts",
       "type": "Expense"
     }
   ]
