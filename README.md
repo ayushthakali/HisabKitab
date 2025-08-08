@@ -1,12 +1,53 @@
-# React + Vite
+# 💸 HisabKitab – Expense Tracker
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**HisabKitab** is a simple and responsive expense tracking app built with **ReactJS**, using a local `db.json` file as a database. It helps you manage your personal finances by organizing income and expenses, displaying summaries, and visualizing data with charts.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
 
-## Expanding the ESLint configuration
+- ✅ **Dashboard Overview**
+  - Displays **Total Balance**, **Total Income**, and **Total Expenses**
+  - Shows **recent transactions**
+  - Includes an **Income vs Expense bar chart**
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- ✅ **Category Management**
+  - View all categories by type: `Income` or `Expense`
+  - Add new categories to classify your transactions
+
+- ✅ **Transaction Management**
+  - View a full list of your transactions
+  - Add new transactions with category, amount, and date
+  - **Edit or delete** any existing transaction
+
+- ✅ **Responsive Design**
+  - Fully responsive and works across all screen sizes
+
+---
+
+## 🧰 Tech Stack
+
+- **Frontend**: React.js + Tailwind CSS
+- **Database**: `db.json` using [`json-server`](https://github.com/typicode/json-server)
+- **Icons**: React Icons
+- **Charting**: Chart.js via `react-chartjs-2`
+
+---
+
+## 📁 Pages Breakdown
+
+### 🏠 Dashboard
+- Shows overall balance, income, and expenses
+- Displays a bar chart comparing income and expense
+- Lists recent transactions
+
+### 📂 Category Page
+- Lists all categories
+- Add new categories easily
+
+### 📃 Transactions Page
+- Lists all transactions with category, amount, and date
+- Add new transactions
+- Edit or delete existing ones
+
+---
